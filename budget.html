@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Budget · Pennywise</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body data-page="budget">
+    <aside class="sidebar">
+      <a class="brand" href="index.html">Pennywise</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html">Dashboard</a></li>
+          <li><a href="transactions.html">Transactions</a></li>
+          <li><a href="budget.html" aria-current="page">Budget</a></li>
+          <li><a href="savings.html">Savings Goals</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <div class="main">
+      <header class="page-header">
+        <h1>Budget</h1>
+        <p id="headerMonth"></p>
+      </header>
+      <main>
+        <section class="panel">
+          <h2>Monthly budget</h2>
+          <form class="filters" id="budgetForm">
+            <label for="month" hidden>Month</label>
+            <select id="month"></select>
+            <label for="monthlyBudget" hidden>Monthly budget</label>
+            <input id="monthlyBudget" type="number" min="0" step="1" placeholder="Monthly budget in ₹" required>
+            <button class="btn" type="submit">Save budget</button>
+          </form>
+          <dl class="summary">
+            <div><dt>Total budget</dt><dd id="totalBudget">₹0</dd></div>
+            <div><dt>Total spent</dt><dd id="totalSpent">₹0</dd></div>
+            <div><dt>Remaining</dt><dd id="remaining">₹0</dd></div>
+          </dl>
+          <div class="alert" id="budgetAlert" hidden></div>
+          <div id="overallBar"></div>
+        </section>
+        <div class="two-col">
+          <section class="panel">
+            <h2>Category spending</h2>
+            <div id="budgetBars"></div>
+          </section>
+          <section class="panel">
+            <h2>Category limits</h2>
+            <p class="muted">Set a limit for each category. Leave 0 for no limit.</p>
+            <form id="limitForm">
+              <div id="limitFields" class="form-grid"></div>
+              <button class="btn" type="submit">Save limits</button>
+            </form>
+          </section>
+        </div>
+      </main>
+      <footer>
+        <p><strong>Pennywise</strong> · Spend mindfully. Save confidently.</p>
+        <nav aria-label="Footer">
+          <a href="index.html">Dashboard</a>
+          <a href="transactions.html">Transactions</a>
+          <a href="budget.html">Budget</a>
+          <a href="savings.html">Savings Goals</a>
+        </nav>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

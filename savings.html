@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Savings Goals · Pennywise</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body data-page="savings">
+    <aside class="sidebar">
+      <a class="brand" href="index.html">Pennywise</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html">Dashboard</a></li>
+          <li><a href="transactions.html">Transactions</a></li>
+          <li><a href="budget.html">Budget</a></li>
+          <li><a href="savings.html" aria-current="page">Savings Goals</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <div class="main">
+      <header class="page-header">
+        <h1>Savings Goals</h1>
+        <p id="headerMonth"></p>
+      </header>
+      <main>
+        <section class="panel">
+          <h2 id="goalFormTitle">Add a savings goal</h2>
+          <form id="goalForm">
+            <input type="hidden" id="goalId">
+            <div class="form-grid">
+              <div class="field">
+                <label for="goalName">Goal name</label>
+                <input id="goalName" type="text" placeholder="e.g. New laptop" required>
+              </div>
+              <div class="field">
+                <label for="goalTarget">Target amount (₹)</label>
+                <input id="goalTarget" type="number" min="1" step="1" required>
+              </div>
+              <div class="field">
+                <label for="goalSaved">Current saved amount (₹)</label>
+                <input id="goalSaved" type="number" min="0" step="1" value="0" required>
+              </div>
+              <div class="field">
+                <label for="goalDate">Target date</label>
+                <input id="goalDate" type="date" required>
+              </div>
+            </div>
+            <div class="actions">
+              <button class="btn" type="submit" id="goalSubmit">Add goal</button>
+              <button class="btn secondary" type="button" id="goalCancel">Clear form</button>
+            </div>
+          </form>
+        </section>
+        <div class="goal-grid" id="goalList"></div>
+      </main>
+      <footer>
+        <p><strong>Pennywise</strong> · Spend mindfully. Save confidently.</p>
+        <nav aria-label="Footer">
+          <a href="index.html">Dashboard</a>
+          <a href="transactions.html">Transactions</a>
+          <a href="budget.html">Budget</a>
+          <a href="savings.html">Savings Goals</a>
+        </nav>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

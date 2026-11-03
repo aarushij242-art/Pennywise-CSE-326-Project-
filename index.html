@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard · Pennywise</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body data-page="dashboard">
+    <aside class="sidebar">
+      <a class="brand" href="index.html">Pennywise</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html" aria-current="page">Dashboard</a></li>
+          <li><a href="transactions.html">Transactions</a></li>
+          <li><a href="budget.html">Budget</a></li>
+          <li><a href="savings.html">Savings Goals</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <div class="main">
+      <header class="page-header">
+        <h1>Dashboard</h1>
+        <p id="headerMonth"></p>
+      </header>
+      <main>
+        <section class="panel">
+          <h2>Take control of your money, one day at a time.</h2>
+          <form class="filters" action="index.html" method="get">
+            <label for="month" hidden>Month</label>
+            <select id="month" name="month"></select>
+            <a class="btn" href="transactions.html?type=Expense#add">Add Expense</a>
+            <a class="btn" href="transactions.html?type=Income#add">Add Income</a>
+            <a class="btn secondary" href="transactions.html">View Transactions</a>
+          </form>
+          <dl class="summary">
+            <div><dt>Total balance</dt><dd id="balance">₹0</dd></div>
+            <div><dt>Total income</dt><dd id="income">₹0</dd></div>
+            <div><dt>Total expenses</dt><dd id="expenses">₹0</dd></div>
+            <div><dt>Monthly budget</dt><dd id="budgetTotal">₹0</dd></div>
+            <div><dt>Remaining budget</dt><dd id="remaining">₹0</dd></div>
+            <div><dt>Total savings</dt><dd id="savings">₹0</dd></div>
+          </dl>
+          <p class="muted small-note">Income, expenses and budget are for the selected month. Balance covers all transactions.</p>
+        </section>
+        <div class="two-col">
+          <section class="panel">
+            <h2>Spending by category</h2>
+            <div id="categoryBars"></div>
+          </section>
+          <section class="panel">
+            <h2>Recent transactions</h2>
+            <div class="table-wrap">
+              <table>
+                <tbody id="recentBody"></tbody>
+              </table>
+            </div>
+            <p class="muted"><a href="transactions.html">See all transactions</a></p>
+          </section>
+        </div>
+      </main>
+      <footer>
+        <p><strong>Pennywise</strong> · Spend mindfully. Save confidently.</p>
+        <nav aria-label="Footer">
+          <a href="index.html">Dashboard</a>
+          <a href="transactions.html">Transactions</a>
+          <a href="budget.html">Budget</a>
+          <a href="savings.html">Savings Goals</a>
+        </nav>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
